@@ -16,10 +16,12 @@
     url: "{{ golang_url }}"
     dest: "/tmp/{{ golang_filename }}"
     checksum: "sha256:{{ golang_sha256 }}"
+  become: yes
 - name: unarchive golang
   unarchive:
     src: "/tmp/{{ golang_filename }}"
     dest: "/usr/local"
+  become: yes
 - name: create go workdirs
   file:
     path: "{{ item }}"
@@ -27,6 +29,7 @@
   with_items:
     - /go/src
     - /go/bin
+  become: yes
 - name: set up /etc/environment for golang
   lineinfile:
     path: /etc/environment
