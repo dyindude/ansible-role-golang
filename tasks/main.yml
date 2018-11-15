@@ -29,8 +29,8 @@
     path: "{{ item }}"
     state: directory
   with_items:
-    - /go/src
-    - /go/bin
+    - "{{ golang_gopath }}/src"
+    - "{{ golang_gopath }}/bin"
   become: yes
 - name: set up /etc/profile.d/gopath.sh
   lineinfile:
@@ -38,6 +38,6 @@
     create: yes
     line: "{{ item }}"
   with_items:
-    - export GOPATH="/go"
-    - export PATH="/go/bin:/usr/local/go/bin:\\$PATH"
+    - "export GOPATH=\"{{ golang_gopath }}\""
+    - "export PATH=\"{{ golang_gopath }}/bin:/usr/local/go/bin:\\$PATH\""
   become: yes
