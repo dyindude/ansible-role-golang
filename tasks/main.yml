@@ -10,6 +10,7 @@
     - libc6-dev
     - make
     - pkg-config
+  become: yes
 - name: download golang
   get_url:
     url: "{{ golang_url }}"
@@ -33,3 +34,4 @@
   with_items:
     - GOPATH="/go"
     - PATH="/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+  become: yes
