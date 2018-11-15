@@ -32,11 +32,11 @@
     - /go/src
     - /go/bin
   become: yes
-- name: set up /etc/environment for golang
+- name: set up /etc/profile.d/gopath.sh
   lineinfile:
-    path: /etc/environment
+    path: /etc/profile.d/gopath.sh
     line: "{{ item }}"
   with_items:
     - GOPATH="/go"
-    - PATH="/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+    - PATH="/go/bin:/usr/local/go/bin:\\$PATH"
   become: yes
