@@ -37,6 +37,6 @@
     path: /etc/profile.d/gopath.sh
     line: "{{ item }}"
   with_items:
-    - GOPATH="/go"
-    - PATH="/go/bin:/usr/local/go/bin:\\$PATH"
+    - export GOPATH="/go"
+    - export PATH="/go/bin:/usr/local/go/bin:\\$PATH"
   become: yes
