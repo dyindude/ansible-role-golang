@@ -21,6 +21,7 @@
   unarchive:
     src: "/tmp/{{ golang_filename }}"
     dest: "/usr/local"
+    remote_src: yes
   become: yes
 - name: create go workdirs
   file:
