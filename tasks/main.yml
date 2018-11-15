@@ -10,8 +10,6 @@
     - libc6-dev
     - make
     - pkg-config
-- debug:
-    var: golang_sha256
 - name: download golang
   get_url:
     url: "{{ golang_url }}"
@@ -32,6 +30,6 @@
   lineinfile:
     path: /etc/environment
     line: "{{ item }}"
-    with_items:
-      - GOPATH="/go"
-      - PATH="/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+  with_items:
+    - GOPATH="/go"
+    - PATH="/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
