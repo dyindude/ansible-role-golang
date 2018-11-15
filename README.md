@@ -1,4 +1,4 @@
-dyindude.golang
+dyindude.golang [![CircleCI](https://circleci.com/gh/dyindude/ansible-role-golang.svg?style=svg)](https://circleci.com/gh/dyindude/ansible-role-golang)
 =========
 
 Ansible role for installing and setting up a working golang distribution on a machine. Modeled after the official golang [docker images](https://hub.docker.com/_/golang/).
