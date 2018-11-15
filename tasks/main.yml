@@ -35,6 +35,7 @@
 - name: set up /etc/profile.d/gopath.sh
   lineinfile:
     path: /etc/profile.d/gopath.sh
+    create: yes
     line: "{{ item }}"
   with_items:
     - export GOPATH="/go"
